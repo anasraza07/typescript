@@ -1,9 +1,7 @@
-Typescript ka real faida = compile-time safety, galti se bachaata hai, code stable banaata hai, time save krta hai  
-Javascript sirf run-time pe error deta hai
-
-Javascript = run-time language  
-Typescript = development-time safety layer (safety & development experience provide krta hai)
-
+Skipped only 16th step assignment
+- Typescript ka real faida = compile-time safety, galti se bachaata hai, code stable banaata hai, time save krta hai  
+- Javascript sirf run-time pe error deta hai; it's run-time language  
+- Typescript = development-time safety layer (safety & development experience provide krta hai)
 - typescript = programming language to address shortcomings of JS. It is actually javascript with type checking
 - benifits = type checking, code completion, refactoring and additional new features
 - `npm i -g typescript` = command to install typescript globally
@@ -28,3 +26,38 @@ Typescript = development-time safety layer (safety & development experience prov
 - nullable types = yaani ham parameters mein union use krke null keyword deskte hain aur iske base pr apna code likh skte hain so that null ke aane pr code crash naa ho
 - optional chaining = ye hamaari if conditions bachaata hai aur sirf jb hi work karega yaani aage brhega jb value null ya undefined naa ho. so '?' followed by chaining (dot) operator is called optional property access operator
 - optional element access operator = this is useful when dealing with arrays 
+- enums ka faida code safety + readability + auto-complete ka hai, run-time output ka nhi
+- Industry mein modern TS projects enums kam use karte hain, string unions or literal types zyada use hote hain because:
+    - Enums JS output mein extra code banate hain (non-const enum case)
+    - String unions lightweight hote hain
+    - Auto-complete same hota hai (unions mein bhi)  
+- Agr readable output chahiye = union types best  
+- Agr strict, numeric, optimized enum chahiye = const enum use kro
+- interfaces = use hote hain component props, object structure aur API responses ke liye jbke types use krte hain for unions, string combinations and literal types
+- Dono ka kaam similar hai but:
+    - type = flexible power, rules, combinations, unions
+    - interface = objects ka blueprint
+- interface extend hota rehta hai ye iski unique ability hai:  
+```
+interface Person {
+  name: string;
+}
+
+interface Person {
+  age: number;
+}
+```
+- dono merge hojaate hain: final interface = `{ name: string; age: number }`
+- generic = reusbale + type-safe yaani ye eik tareeqa hai type ko dynamic banaane ka, koi bhi type dedo ye usi tarh treat karega so generic means type  ko input ke hisaab se dynamic banaana
+- but yahan `any` use krne se eik to auto-complete nhi milta aur doosra value ka type hi khatam hojaata hai jbke generics ke sth compiler automatically calling ke waqt detect krleta hai
+- typescript aksar arguments ke base pr generic type ka andaaza lagaa leta hai wrna ham khud se bhi type define kr skte hain
+- ab kbhi kbhi ham chahte hain ke generic to ho but kch rules follow karay isko kehte hain generic constraint.
+- utility types = typescript ke pre-built tools jo types ko modify krte hain
+  - Partial type = sb properties optional krdeta hai
+  - Required type = sb properties required krdeta hai
+  - Readonly types = properties readonly bnte hain, unchangeable krdeta hai
+  - Pick <Type, Keys> = sirf selected properties rkhta hai
+  - Omit <Type, Keys> = kch properties hataa deta hai
+- Har .ts file apna ek module hota hai mtlb ham file ke andr jo bhi chz export karengay usko kisi doosri file mein import krke use kr skte hain
+- named export = mein import brackets `{}` use hote hain
+- default export = eik file mein sirf eik hi hota hai (most imp for React), is mein brackets nhi aate aur import krte hue naam apni marzi ka rkh skte hain

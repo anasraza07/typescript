@@ -62,4 +62,23 @@ let customer = getCustomer(0);
 console.log(customer?.birthday?.getFullYear());
 let log = null;
 log?.("a");
+function wrap(value) {
+    console.log(value);
+    return value;
+}
+wrap("Anas");
+wrap(true);
+let u = {
+    name: "Anas"
+};
+let requiredUser = {
+    name: "Anas",
+    age: 20,
+};
+let readOnlyUser = {
+    age: 20,
+};
+let selectedUser = {
+    age: 20
+};
 //# sourceMappingURL=index.js.map

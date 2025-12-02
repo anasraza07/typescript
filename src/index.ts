@@ -1,3 +1,6 @@
+// ************ //
+// TYPESCRIPT - MOSH
+
 let age: number = 12;
 let username: string = "anas";
 let isLogin: boolean = false;
@@ -122,3 +125,40 @@ console.log(customer?.birthday?.getFullYear());
 // optional call
 let log: any = null;
 log?.("a");
+
+// **************** //
+
+// GPT CONCEPTS
+// generic types:
+function wrap<T>(value: T) {
+    console.log(value);
+    return value;
+}
+// wrap(12).toUpperCase(); // ERROR: property 'toUpperCase' does not exist on type 12.
+wrap("Anas");
+wrap(true);
+
+// utility types:
+type User = {
+    name?: string,
+    age?: number
+}
+let u: Partial<User> = {
+    name: "Anas"
+}
+// without Partial:
+// let u1: { name?: string, age?: number }
+
+let requiredUser: Required<User> = {
+    name: "Anas",
+    age: 20,
+}
+
+let readOnlyUser: Readonly<User> = {
+    age: 20,
+}
+// readOnlyUser.age = 23 // error
+
+let selectedUser: Pick<User, "age"> = {
+    age: 20
+}
