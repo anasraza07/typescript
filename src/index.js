@@ -1,6 +1,5 @@
 // ************ //
 // TYPESCRIPT - MOSH
-var _a;
 var age = 12;
 var username = "anas";
 var isLogin = false;
@@ -76,18 +75,35 @@ function getCustomer(id) {
 }
 var customer = getCustomer(0);
 // if (customer !== null && customer !== undefined)
-console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+// console.log(customer?.birthday?.getFullYear());
 // optional element access operator
 // customers?.[0]
 // optional call
 var log = null;
 log === null || log === void 0 ? void 0 : log("a");
 // **************** //
-// GPT CONCEPTS:
+// GPT CONCEPTS
+// generic types:
 function wrap(value) {
     console.log(value);
     return value;
 }
-// wrap(12).toUpperCase(); // ERROR: property 'toUpperCase' does not exist on type 12.
-wrap("Anas");
-wrap(true);
+var u = {
+    name: "Anas"
+};
+// without Partial:
+// let u1: { name?: string, age?: number }
+var requiredUser = {
+    name: "Anas",
+    age: 20,
+};
+var readOnlyUser = {
+    age: 20,
+};
+// readOnlyUser.age = 23 // error
+var selectedUser = {
+    age: 20
+};
+// *********** //
+// FREECODECAMP
+console.log(Math.floor(12.29));

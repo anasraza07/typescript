@@ -55,7 +55,7 @@ function salary(salary) {
         console.log("No salary");
     }
 }
-salary(50_000);
+salary();
 let id = 10;
 id = "10";
 const firstEmployee = {
@@ -156,9 +156,16 @@ function printInfo(person) {
 }
 let person = { name: "anas", email: "ar@ar.com" };
 async function fetchUser() {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    const data = await res.json();
-    return data;
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        if (!res.ok) {
+            return null;
+        }
+        const data = await res.json();
+        return data;
+    }
+    catch (error) {
+        return null;
+    }
 }
-fetchUser().then(u => console.log(u));
 //# sourceMappingURL=practice.js.map

@@ -117,7 +117,7 @@ function getCustomer(id: number): Customer | null {
 
 let customer = getCustomer(0);
 // if (customer !== null && customer !== undefined)
-console.log(customer?.birthday?.getFullYear());
+// console.log(customer?.birthday?.getFullYear());
 
 // optional element access operator
 // customers?.[0]
@@ -135,8 +135,8 @@ function wrap<T>(value: T) {
     return value;
 }
 // wrap(12).toUpperCase(); // ERROR: property 'toUpperCase' does not exist on type 12.
-wrap("Anas");
-wrap(true);
+// wrap("Anas");
+// wrap(true);
 
 // utility types:
 type User = {
@@ -162,3 +162,129 @@ let readOnlyUser: Readonly<User> = {
 let selectedUser: Pick<User, "age"> = {
     age: 20
 }
+
+
+// *********** //
+// FREECODECAMP
+// console.log(Math.floor(13.29))
+
+// type annotations with objects:
+let personExOne: {
+    name: string
+    age: number
+    jobTitle?: string
+    address: {
+        street: string
+        city: string
+    }
+};
+personExOne = {
+    name: "Alice",
+    age: 10,
+    address: {
+        street: "123",
+        city: "wonder land"
+    }
+}
+
+let personExTwo: {
+    name: string
+    age: number
+    jobTitle?: string
+    address: {
+        street: string
+        city: string
+    }
+} = {
+    name: "Alice",
+    age: 10,
+    address: {
+        street: "123",
+        city: "wonder land"
+    }
+}
+
+// rest parameter:
+function addAll(...nums: number[]): number {
+    let result = 0;
+
+    for (const n of nums) {
+        result += n;
+    }
+
+    return result;
+}
+// console.log(addAll(1, 2, 3, 4, 5, 6, +true))
+// console.log(addAll());
+
+// arrow function:
+const addWithArrow = (num1: number, num2: number): number => num1 + num2;
+
+
+// anonymous function:
+const add = function (num1: number, num2: number): number {
+    return num1 + num2;
+}
+// console.log(add(10, 20)) // output: 30
+
+// type annotation with multidimensional arrays
+let arrayThree: (string | number)[] = [1, 2, 3, "A", "B", "C"]
+
+// tuple:
+let article: readonly [number, string, boolean] = [11, "Title One", true]
+article = [12, "Title two", false];
+
+const [id, title, published] = article;
+
+// console.log(article);
+// console.log(id, title, published)
+
+// interfaces:
+interface PersonEx2 {
+    name: string,
+    age: number,
+    greet(msg: string): void;
+}
+const ali: PersonEx2 = {
+    name: "Ali",
+    age: 30,
+    greet(msg: string) {
+        // console.log(`${this.name} says: ${msg}`)
+    }
+}
+ali.greet("Hello typescript!");
+
+// type & interface differences
+interface AnimalInterfaceEx {
+    type: string
+}
+interface Dog extends AnimalInterfaceEx {
+    bark(): void
+}
+
+type AnimalTypeEx = {
+    type: string
+}
+type Monkey = AnimalTypeEx & {
+    bark(): void
+}
+
+
+// class type annotations
+class Product {
+    id: number;
+    name: string;
+    price: number
+
+    constructor(id: number, name: string, price: number) {
+        this.id = id,
+            this.name = name,
+            this.price = price
+    }
+
+    getProductInfo(): string {
+        return `ID: ${this.id}, Name: ${this.name}, Price: ${this.price}`
+    }
+}
+const productOne = new Product(1, "Widget", 20.0)
+console.log(productOne.getProductInfo())    

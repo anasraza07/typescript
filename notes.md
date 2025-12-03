@@ -1,4 +1,5 @@
 Skipped only 16th step assignment
+- extensions = javascript and typescript nightly, material icon theme, prettier code formatter, prettier eslint, pretty typescript errors
 - Typescript ka real faida = compile-time safety, galti se bachaata hai, code stable banaata hai, time save krta hai  
 - Javascript sirf run-time pe error deta hai; it's run-time language  
 - Typescript = development-time safety layer (safety & development experience provide krta hai)
@@ -6,7 +7,8 @@ Skipped only 16th step assignment
 - benifits = type checking, code completion, refactoring and additional new features
 - `npm i -g typescript` = command to install typescript globally
 - `tsc index.tsx` = command used to compile ts file
-- compile krne ke baad eik index.js file banti hai jis mein saare compiled code hota hota hai aur code run wahi se hoga yaani to see output you will have to run: `node index.js`
+- `tsc --init` = command jis se tsconfig.js file banti hai default settings ke sth
+- compile krne ke baad eik index.js file banti hai jis mein saare compiled code hota hota hai aur code run wahi se hoga yaani to see output you will have to run: `node index.js` ya phr agr config file bangai hai aur wahan rootDir & outDir hai to compile ke liye `tsc` and to see output, run: `node dist/index.js`
 - jb ham variable declare karen aur initialize naa krna ho to usko type `any` dete hain, `any` means any type of values but har waqt is type ko use krne se type checking ka feature nhi milta aur typescript ke use krne ka major reason bekaar hojaata hai
 - jb kbhi project mein bht saare `any` put krne hon uske liye ham config file mein noImplicitAny ko false kr skte hain aur phr type 'any' put naa krne se bhi typescript error nhi deta 
 - type dene se eik benifit ye milta hai jese hamne array ko numbers type dia ab hamein array methods mein each element ke liye specifically number waale methods milte hain through vscode intellisense
@@ -61,3 +63,11 @@ interface Person {
 - Har .ts file apna ek module hota hai mtlb ham file ke andr jo bhi chz export karengay usko kisi doosri file mein import krke use kr skte hain
 - named export = mein import brackets `{}` use hote hain
 - default export = eik file mein sirf eik hi hota hai (most imp for React), is mein brackets nhi aate aur import krte hue naam apni marzi ka rkh skte hain
+- `tsc --watch` = command jiksa use krke phr baar baar compile krne ki need nhi parti
+- programming langugaes 2 tarh ki hoti hai statically typed aur dynamically typed language. Statically typed language jese c++, java etc mein variable ki type declare krna requirement hoti hai compile time ya coding krte waqt. Aur dynamically types language jese javascript aur ruby etc ye allow krte hain ke variable dynamic types rkhe aur runtime ke waqt decide kare aur execution ke waqt change bhi hoskta hai isi waja se flexibility ke sth sth errors bhi aate hain
+- transpolation = jb typescript compile kare code ko into js
+- dynamic type determination = typescript automatically khud se bhi variable ki type ka andaaza lagaa leta hai based on declaration but phr bhi ye recommend nhi hai
+- defining types through type annotation is best practice
+- `!` ka matlab = I promise ye value undefined nahi hoga.
+- never = type un values ko represent krta hai jo kbhi nhi hongay jese infinity loop yaani function jo kbhi return nhi karega bcuz of infinity loop or bcuz of throwing error msg
+- type aliases = iska use krke ham apne custom types banaate hain jese string, number, null etc ham apna eik alag se banaa skte hain    

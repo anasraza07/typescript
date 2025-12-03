@@ -59,15 +59,12 @@ function getCustomer(id) {
     return id === 0 ? null : { birthday: new Date() };
 }
 let customer = getCustomer(0);
-console.log(customer?.birthday?.getFullYear());
 let log = null;
 log?.("a");
 function wrap(value) {
     console.log(value);
     return value;
 }
-wrap("Anas");
-wrap(true);
 let u = {
     name: "Anas"
 };
@@ -81,4 +78,59 @@ let readOnlyUser = {
 let selectedUser = {
     age: 20
 };
+let personExOne;
+personExOne = {
+    name: "Alice",
+    age: 10,
+    address: {
+        street: "123",
+        city: "wonder land"
+    }
+};
+let personExTwo = {
+    name: "Alice",
+    age: 10,
+    address: {
+        street: "123",
+        city: "wonder land"
+    }
+};
+function addAll(...nums) {
+    let result = 0;
+    for (const n of nums) {
+        result += n;
+    }
+    return result;
+}
+const addWithArrow = (num1, num2) => num1 + num2;
+const add = function (num1, num2) {
+    return num1 + num2;
+};
+let arrayThree = [1, 2, 3, "A", "B", "C"];
+let article = [11, "Title One", true];
+article = [12, "Title two", false];
+const [id, title, published] = article;
+const ali = {
+    name: "Ali",
+    age: 30,
+    greet(msg) {
+        console.log(`${this.name} says: ${msg}`);
+    }
+};
+ali.greet("Hello typescript!");
+class Product {
+    id;
+    name;
+    price;
+    constructor(id, name, price) {
+        this.id = id,
+            this.name = name,
+            this.price = price;
+    }
+    getProductInfo() {
+        return `ID: ${this.id}, Name: ${this.name}, Price: ${this.price}`;
+    }
+}
+const productOne = new Product(1, "Widget", 20.0);
+console.log(productOne.getProductInfo());
 //# sourceMappingURL=index.js.map

@@ -1,10 +1,10 @@
-// 1:
+// 1: What is Typescript? + Setup
 let username: string = "anasraza07";
 let age: number = 20;
 let isLoggedIn: boolean = true;
 // console.log(username, age, isLoggedIn)
 
-// 2:
+// 2: Basic Types
 let anything: any = 'testing';
 let maybeNum: unknown = "ten";
 if (typeof maybeNum === "number") {
@@ -15,7 +15,7 @@ if (typeof maybeNum === "number") {
     console.log("invalid value!")
 }
 
-// 3:
+// 3: Arrays & Tuples
 let numsArr: number[] = [1, 2, 3, 4, 6, 7, 9];
 // numsArr.forEach(n => console.log(n * n));
 
@@ -25,7 +25,7 @@ let strArr: string[] = ["abc", "def", "fruits", "end"];
 strArr[4] = "updatedValue";
 console.log(strArr);
 
-// 4:
+// 4: Type Aliases
 type Product = {
     name: string,
     price: number,
@@ -41,7 +41,7 @@ let productTwo: Product = {
 // console.log(productOne.name, productOne.price)
 // console.log(productTwo.name, productTwo.price)
 
-// 5:
+// 5: Functions with Types
 function multiply(a: number, b: number): number {
     return a * b;
 }
@@ -59,7 +59,7 @@ const isLoggedInFunc = (): boolean => {
 }
 console.log(isLoggedInFunc());
 
-// 6:
+// 6: Optioanl & Default Params 
 function tellAge(age: number = 18): void {
     console.log("Your age is", age)
 }
@@ -72,10 +72,10 @@ function salary(salary?: number): void {
         console.log("No salary");
     }
 }
-salary(50_000);
+salary();
 
 
-// 7:
+// 7: Union & Intersection Types
 let id: number | string = 10;
 id = "10";
 
