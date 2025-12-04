@@ -70,4 +70,8 @@ interface Person {
 - defining types through type annotation is best practice
 - `!` ka matlab = I promise ye value undefined nahi hoga.
 - never = type un values ko represent krta hai jo kbhi nhi hongay jese infinity loop yaani function jo kbhi return nhi karega bcuz of infinity loop or bcuz of throwing error msg
-- type aliases = iska use krke ham apne custom types banaate hain jese string, number, null etc ham apna eik alag se banaa skte hain    
+- type aliases = iska use krke ham apne custom types banaate hain jese string, number, null etc ham apna eik alag se banaa skte hain
+- class access modifiers typescript mein 3 tarh ke hain;
+  - public = inside and outside from classes dono se access kr skte hain 
+  - private = iside mein hi access kr skte hain, outside ke liye koi method hona zaroori hai
+  - protected = class aur uski sub classes mein accessible hota hai bs not accesible outside.

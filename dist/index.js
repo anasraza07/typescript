@@ -114,7 +114,6 @@ const ali = {
     name: "Ali",
     age: 30,
     greet(msg) {
-        console.log(`${this.name} says: ${msg}`);
     }
 };
 ali.greet("Hello typescript!");
@@ -133,4 +132,44 @@ class Product {
 }
 const productOne = new Product(1, "Widget", 20.0);
 console.log(productOne.getProductInfo());
+class MyClassPublic {
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+}
+const instancePublic = new MyClassPublic("John");
+class MyClassPrivate {
+    secret;
+    constructor(secret) {
+        this.secret = secret;
+    }
+    revealSecret() {
+        console.log(this.secret);
+    }
+}
+const instancePrivate = new MyClassPrivate("My secret");
+class Parent {
+    familyName;
+    constructor(name) {
+        this.familyName = name;
+    }
+}
+class Child extends Parent {
+    introduceFamily() {
+        console.log(`Our family name is ${this.familyName}`);
+    }
+}
+const parentEx = new Parent("John");
+const childEx = new Child("Smith");
+function returnTypeEx(val) {
+    return val;
+}
+const returnTypeArrowSyntax = (val) => {
+    return val;
+};
+function multipleTypes(val1, val2) {
+    console.log(`The value1 is ${val1} and type of value2 is ${typeof val2}`);
+}
+multipleTypes(100, "Anas");
 //# sourceMappingURL=index.js.map

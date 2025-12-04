@@ -287,4 +287,70 @@ class Product {
     }
 }
 const productOne = new Product(1, "Widget", 20.0)
-console.log(productOne.getProductInfo())    
+console.log(productOne.getProductInfo())
+
+// class access modifiers
+class MyClassPublic {
+    public name: string
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+const instancePublic = new MyClassPublic("John");
+// console.log(new MyClassPublic("John").name);
+// console.log(instancePublic.name);
+
+
+class MyClassPrivate {
+    private secret: string;
+
+    constructor(secret: string) {
+        this.secret = secret;
+    }
+
+    revealSecret() {
+        console.log(this.secret)
+    }
+}
+const instancePrivate = new MyClassPrivate("My secret");
+// instancePrivate.secret; // error because secret is private 
+// instancePrivate.revealSecret(); // valid way to access
+
+class Parent {
+    protected familyName: string;
+
+    constructor(name: string) {
+        this.familyName = name;
+    }
+}
+class Child extends Parent {
+    introduceFamily() {
+        console.log(`Our family name is ${this.familyName}`)
+    }
+}
+const parentEx = new Parent("John");
+const childEx = new Child("Smith");
+
+// console.log(parentEx.familyName)
+// childEx.introduceFamily();
+
+// generic types
+function returnTypeEx<T>(val: T): T {
+    return val
+}
+// console.log(returnTypeEx<number>(123));
+// console.log(returnTypeEx<string>("anas"));
+
+// with arrow function
+const returnTypeArrowSyntax = <T>(val: T): T => {
+    return val;
+}
+// console.log(returnTypeArrowSyntax<boolean>(false));
+
+function multipleTypes<T, S>(val1: T, val2: S) {
+    console.log(
+        `The value1 is ${val1} and type of value2 is ${typeof val2}`
+    )
+}
+// multipleTypes<number, string>(100, "Anas")
