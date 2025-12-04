@@ -75,3 +75,9 @@ interface Person {
   - public = inside and outside from classes dono se access kr skte hain 
   - private = iside mein hi access kr skte hain, outside ke liye koi method hona zaroori hai
   - protected = class aur uski sub classes mein accessible hota hai bs not accesible outside.
+
+**Typescript with Reactjs**
+- for components we use = `React.FC` type like `const App: React.FC`
+- for setState function we use this type based on jo bhi is function ko milega jese for string = `React.Dispatch<React.SetStateAction<string>>` 
+- useRef ke liye ham html element type dete hain aur ye type hamein easily element pr hover krne se mil jaati hai jese `useRef<HTMlInputElement>`
+- dependencies in typescript = jb bhi ham typescript use krte hain to koi bhi library ya dependency install krte waqt uski uski types bhi install krna zaroori hai
